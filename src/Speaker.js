@@ -13,10 +13,12 @@ import john from "./images/john.jpeg";
 import mathieu from "./images/mathieu.jpeg";
 import katie from "./images/katie.jpeg";
 import Profile from "./components/Profile.js";
+import logo from "./images/logo.png";
 const Speaker = () => {
   return (
     <>
       <NavBar />
+      <img src={logo} className="absolute scale-50 mx-auto z-10" />
       <div className="bg-black w-screen h-fit py-12 min-h-screen">
         <div className="top-24 relative bg-black h-fit w-fit py-12">
           <h1 className="relative text-white text-center py-8 text-4xl font-bold">

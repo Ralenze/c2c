@@ -17,6 +17,8 @@ import mariposasponsor from "./images/toinvertmariposa.png";
 import uwresearchsponsor from "./images/uwresearch.png";
 import uwdkisponsor from "./images/uwdki.png";
 import sevenshoressponsor from "./images/sevenshoressponsor.png";
+import logo from "./images/logo.png";
+
 library.add(fas, faTwitter, faFontAwesome, faLinkedin, faInstagram, faEnvelope);
 
 const Contact = () => {
@@ -27,8 +29,10 @@ const Contact = () => {
   return (
     <>
       <NavBar />
+
       <div className="bg-black w-screen h-[275vh] min-h-fit">
-        <div className="flex flex-col top-32 relative bg-black w-screen h-screen ">
+        <img src={logo} className="relative scale-50 mx-auto z-10" />
+        <div className="flex flex-col relative bg-black w-screen h-screen ">
           <div ref={contMessage} className="relative mx-auto h-24 w-4/5">
             <h1 className="text-4xl text-center leading-relaxed font-extrabold text-white">
               Contact
@@ -58,7 +62,7 @@ const Contact = () => {
           <h1 className="text-center text-white text-4xl font-extrabold">
             Our Sponsors
           </h1>
-          <div className="flex flex-col w-full justify-center py-6">
+          <div className="bg-black flex flex-col w-full justify-center py-6">
             <img src={wesefsponsor} className="h-40 w-40 m-auto"></img>
             <img src={canadasponsor} className="self-center h-2/5 w-4/5"></img>
             <img src={wusasponsor} className="h-40 w-40 self-center"></img>

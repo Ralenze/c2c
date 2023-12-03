@@ -1,19 +1,20 @@
 import { useState, useRef, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Foldable from "./components/Foldable";
+import logo from "./images/logo.png";
 const FAQ = () => {
   return (
     <>
       <NavBar />
       <div className="bg-black h-fit min-h-screen w-screen">
+        <img src={logo} className="scale-50 absolute mx-auto " />
         <div className="space-y-12 top-1/4 absolute h-2/3 w-screen overflow-scroll">
           <Foldable
             title="What is the Combining Two Cultures conference?"
             text="Combining Two Cultures is a conference that celebrates interdisciplinary 
             education among undergraduate students. It serves as a platform for participants
              from Canada and abroad to explore and discuss the benefits and applications of 
-             interdisciplinary degrees and experiences.
-"
+             interdisciplinary degrees and experiences."
           />
           <Foldable
             title="What schools and programs are involved?"

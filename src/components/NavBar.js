@@ -6,6 +6,8 @@ import { fas, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faFontAwesome } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const NavBar = () => {
+  const navbarclass =
+    "relative h-12 w-screen lg:w-[20%] cursor-pointer transition duration-200 hover:text-[#4FEFFD]";
   const navigate = useNavigate();
   const mainPage = () => {
     navigate("/");
@@ -32,7 +34,7 @@ const NavBar = () => {
   let hamburgerOutcome = useRef(null);
   let currentlyOn = false;
   let hamburgerOutcomeClass =
-    " fixed z-[100] h-screen w-screen backdrop-blur-md transition-all ease-in-out duration-500 opacity-0 ";
+    " fixed z-[100] lg:bg-black lg:border-b lg:border-b-white h-screen w-screen lg:h-24 lg:top-0 backdrop-blur-md lg:backdrop-blur-none transition-all ease-in-out duration-500  ";
   const outcomeToggle = () => {
     if (currentlyOn) {
       hamburgerOutcome.current.classList =
@@ -52,57 +54,42 @@ const NavBar = () => {
         icon={faBars}
         ref={hamburgerNav}
         onClick={outcomeToggle}
-        className="text-white fixed z-10 left-6 top-6 h-10 w-10"
+        className="text-white fixed z-10 left-6 top-6 h-10 w-10 lg:hidden "
       ></FontAwesomeIcon>
       <div
         ref={hamburgerOutcome}
-        className={hamburgerOutcomeClass + "invisible"}
+        className={hamburgerOutcomeClass + "max-sm:invisible max-sm:opacity-0 "}
       >
         <FontAwesomeIcon
           icon={faXmark}
           onClick={outcomeToggle}
-          className="fixed top-6 left-6 h-10 w-10 text-white "
+          className="fixed top-6 left-6 h-10 w-10 text-white lg:hidden "
         ></FontAwesomeIcon>
-        <div className="fixed h-1/2 flex flex-col top-1/4 justify-around w-screen  ">
+        <div className="lg:bg-black fixed h-1/2 lg:h-1/2 flex flex-col lg:flex-row top-1/4 lg:space-x-12 justify-around w-screen lg:w-2/3 lg:right-0 text-3xl lg:font-light text-white font-extrabold text-center lg:text-justify ">
           <div
             onClick={mainPage}
-            className="relative h-12 w-screen text-white text-3xl font-extrabold text-center"
+            className="relative h-12 w-screen lg:w-[20%] cursor-pointer transition duration-200 hover:text-[#4FEFFD]"
           >
             {" "}
             HOME
           </div>
-          <div
-            onClick={aboutPage}
-            className="relative h-12 w-screen text-white text-3xl font-extrabold text-center"
-          >
+          <div onClick={aboutPage} className={navbarclass}>
             {" "}
-            OUR TEAM
+            ABOUT
           </div>
-          <div
-            onClick={speakerPage}
-            className="relative h-12 w-screen text-white text-3xl font-extrabold text-center"
-          >
+          <div onClick={speakerPage} className={navbarclass}>
             {" "}
             SPEAKERS
           </div>
-          <div
-            onClick={eventPage}
-            className="relative h-12 w-screen text-white text-3xl font-extrabold text-center"
-          >
+          <div onClick={eventPage} className={navbarclass}>
             {" "}
             SCHEDULE
           </div>
-          <div
-            onClick={contactPage}
-            className="relative h-12 w-screen text-white text-3xl font-extrabold text-center"
-          >
+          <div onClick={contactPage} className={navbarclass}>
             {" "}
             CONTACT
           </div>
-          <div
-            onClick={faqPage}
-            className="relative h-12 w-screen text-white text-3xl font-extrabold text-center"
-          >
+          <div onClick={faqPage} className={navbarclass}>
             {" "}
             FAQs
           </div>
