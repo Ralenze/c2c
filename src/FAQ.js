@@ -7,8 +7,11 @@ const FAQ = () => {
     <>
       <NavBar />
       <div className="bg-black h-fit min-h-screen w-screen">
-        <img src={logo} className="scale-50 absolute mx-auto " />
-        <div className="space-y-12 top-1/4 absolute h-2/3 w-screen overflow-scroll">
+        <img src={logo} className="scale-50 absolute mx-auto lg:hidden" />
+        <h1 className="hidden lg:block sticky text-6xl text-center top-1/4 text-white ">
+          FAQ
+        </h1>
+        <div className="space-y-12 top-1/4 bg-black absolute h-fit w-screen overflow-scroll lg:top-1/2 last:pb-24">
           <Foldable
             title="What is the Combining Two Cultures conference?"
             text="Combining Two Cultures is a conference that celebrates interdisciplinary 

@@ -17,7 +17,7 @@ const App = () => {
       setTimeout(() => {
         if (startingref.current) {
           startingref.current.className =
-            "transition-all ease-in-out duration-1000 relative h-fit w-full top-80 opacity-100";
+            "transition-all ease-in-out duration-1000 relative h-fit w-full top-80 lg:top-60 opacity-100";
         }
       }, 150)
     );
@@ -25,7 +25,7 @@ const App = () => {
       setTimeout(() => {
         if (startingref.current) {
           startingref.current.className =
-            "transition-all ease-in-out duration-1000 relative h-fit w-full top-40 opacity-100";
+            "transition-all ease-in-out duration-1000 relative h-fit w-full top-40 lg:top-40 opacity-100";
         }
       }, 1000)
     );
@@ -59,7 +59,7 @@ const App = () => {
       <div className="bg-black h-screen w-screen">
         <div
           ref={startingref}
-          className=" transition-all ease-in-out duration-1000 relative h-fit w-full top-80 opacity-0 lg:top-20"
+          className=" transition-all ease-in-out duration-1000 relative h-fit w-full top-80 opacity-0 lg:top-60"
         >
           <h1 className=" tracking-wide leading-normal text-5xl  text-[#C1FE76] font-SF text-center top-2/5">
             COMBINING

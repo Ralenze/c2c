@@ -5,7 +5,7 @@ const Event = (prop) => {
       <div
         className={
           "relative border-r border-black h-full w-1/4 text-center text-lg font-light flex items-center justify-center text-black " +
-          (odd ? "bg-gray-300" : "bg-gray-100")
+          (odd ? "bg-gray-800" : "bg-gray-500")
         }
       >
         {prop.time}
@@ -13,7 +13,7 @@ const Event = (prop) => {
       <div
         className={
           "flex justify-center items-center text-black text-xl font-medium relative h-full w-3/4 px-2 " +
-          (odd ? "bg-gray-100 " : "bg-gray-300")
+          (odd ? "bg-gray-400 " : "bg-gray-700")
         }
       >
         {prop.desc}

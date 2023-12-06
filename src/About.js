@@ -27,25 +27,59 @@ import ScrollToButton from "./components/ScrollToButton.js";
 import { useRef, useState, useEffect } from "react";
 import Profile from "./components/Profile.js";
 const About = () => {
+  const sectionClass = "transition duration-200 lg:opacity-0 ";
+  let profileGroupClass =
+    "flex flex-col space-y-6 items-center space-x-6 justify-center flex-wrap lg:flex-row";
   let coordinateRef = useRef(null);
   let leadershipRef = useRef(null);
   let communicationRef = useRef(null);
   let financeRef = useRef(null);
   let eventRef = useRef(null);
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  useEffect(() => {
+    coordinateRef.current.className = sectionClass + " lg:block lg:opacity-100";
+    leadershipRef.current.className = sectionClass + " lg:hidden";
+    communicationRef.current.className = sectionClass + " lg:hidden";
+    financeRef.current.className = sectionClass + " lg:hidden";
+    eventRef.current.className = sectionClass + " lg:hidden";
+  });
   const scrollToSection = (section) => {
     console.log("meow");
     console.log(section.current);
+    console.log(window.innerWidth);
+    if (window.innerWidth < 600) {
+      console.log("real ones");
+      if (section.current) {
+        section.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    } else {
+      newSelect(section);
+    }
+  };
+  let currentLook = coordinateRef;
+
+  const newSelect = (section) => {
+    console.log("made it!");
+    let temp = currentLook;
     if (section.current) {
-      section.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      setTimeout(() => {
+        temp.current.className = sectionClass + " lg:hidden";
+        section.current.className = sectionClass + " lg:block ";
+      }, 150);
+      setTimeout(() => {
+        section.current.className = sectionClass + " lg:block lg:opacity-100";
+      }, 200);
+      currentLook.current.className = sectionClass + " lg:opacity-0";
+      currentLook = section;
     }
   };
   return (
     <>
       <NavBar />
-      <div className="bg-black h-screen w-screen flex flex-col justify-evenly">
+      <div className="bg-black h-screen lg:h-[70vh] w-screen flex flex-col justify-evenly">
         <h1 className="relative font-extrabold text-4xl top-12 text-white text-center">
           Meet Our Team.
           <p className=" text-white text-sm font-normal py-6 px-6 leading-loose text-center">
@@ -56,7 +90,7 @@ const About = () => {
             worked together to bring this conference to life!
           </p>
         </h1>
-        <div className="relative flex flex-col justify-center items-center ">
+        <div className="relative flex flex-col lg:flex-row justify-center items-center lg:justify-center lg:space-x-12 lg:border-b lg:border-b-white">
           <ScrollToButton
             text={"Coordinators"}
             onClick={() => {
@@ -93,103 +127,104 @@ const About = () => {
       </div>
 
       <div className="bg-black ">
-        <h1
-          ref={coordinateRef}
-          className="relative font-extrabold text-3xl py-8 text-center text-white"
-        >
-          {" "}
-          Coordinators
-        </h1>
-        <div className="flex flex-col space-y-6">
-          <Profile imgsrc={kayvan} name="Kayvan Yavari" ptext="he/him" />{" "}
-          <Profile imgsrc={rachel} name="Rachel Deshpande" ptext="she/her" />
+        <div ref={coordinateRef} className={sectionClass}>
+          <h1 className="relative font-extrabold text-3xl py-8 text-center text-white">
+            {" "}
+            Coordinators
+          </h1>
+          <div className={profileGroupClass}>
+            <Profile imgsrc={kayvan} name="Kayvan Yavari" ptext="he/him" />{" "}
+            <Profile imgsrc={rachel} name="Rachel Deshpande" ptext="she/her" />
+          </div>
         </div>
-        <h1
-          ref={leadershipRef}
-          className="relative font-extrabold text-3xl py-8 text-center text-white"
-        >
-          {" "}
-          Leadership
-        </h1>
-        <div className="flex flex-col space-y-6">
-          <Profile
-            imgsrc={katie}
-            name="Katie Burt"
-            ptext="she/her"
-            styles="h-[19.25rem] w-44"
-          />{" "}
-          <Profile imgsrc={arya} name="Arya Razmjoo" ptext="hi/him" />
-          <Profile imgsrc={sophia} name="Sophia Armstrong" ptext="she/her" />
-        </div>
-        <h1
-          ref={communicationRef}
-          className="relative font-extrabold text-3xl py-8 text-center text-white"
-        >
-          {" "}
-          Communications
-        </h1>
-        <div className="flex flex-col space-y-6">
-          <Profile
-            imgsrc={lauren}
-            name="Lauren Rankin"
-            ptext="she/her"
-            styles="h-[18.75rem] w-[9.75rem]"
-          />{" "}
-          <Profile
-            imgsrc={alana}
-            name="Alana Matsuo"
-            ptext="she/her"
-            styles="h-64 w-72"
-          />
-          <Profile
-            imgsrc={dalai}
-            name="Dalai Setiawan"
-            ptext="he/him"
-            styles="h-72 w-64"
-          />
-          <Profile
-            imgsrc={jasmine}
-            name="Jasmine Kibati"
-            ptext="she/her"
-            styles="h-[19.5rem] w-72"
-          />
-          <Profile imgsrc={siimar} name="Siimar Leen Kaur" ptext="she/her" />
-          <Profile
-            imgsrc={sarah}
-            name="Sarah O'Donnell"
-            ptext="she/her"
-            styles="h-48 w-48"
-          />
-        </div>
+        <div ref={leadershipRef} className={sectionClass}>
+          <h1 className="relative font-extrabold text-3xl py-8 text-center text-white">
+            {" "}
+            Leadership
+          </h1>
 
-        <h1
-          ref={financeRef}
-          className="relative font-extrabold text-3xl py-8 text-center text-white"
-        >
-          {" "}
-          Finance
-        </h1>
-        <div className="flex flex-col space-y-6">
-          <Profile imgsrc={graeme} name="Graeme DePiero" ptext="he/him" />{" "}
-          <Profile imgsrc={rowan} name="Rowan Chang" ptext="he/they" />
-          <Profile
-            imgsrc={jordan}
-            name="Jordan Kalist"
-            ptext=""
-            styles="h-[18.75rem] w-[16.5rem]"
-          />
+          <div>
+            <div className={profileGroupClass}>
+              <Profile
+                imgsrc={katie}
+                name="Katie Burt"
+                ptext="she/her"
+                styles="h-[19.25rem] w-44"
+              />{" "}
+              <Profile imgsrc={arya} name="Arya Razmjoo" ptext="hi/him" />
+              <Profile
+                imgsrc={sophia}
+                name="Sophia Armstrong"
+                ptext="she/her"
+              />
+            </div>
+          </div>
         </div>
-        <h1
-          ref={eventRef}
-          className="relative font-extrabold text-3xl py-8 text-center text-white"
-        >
-          {" "}
-          Events
-        </h1>
-        <div className="flex flex-col space-y-6">
-          <Profile imgsrc={marcus} name="Marcus Chan" ptext="he/him" />{" "}
-          <Profile imgsrc={cadey} name="Cadey Chen" ptext="she/her" />
-          <Profile imgsrc={jasmine} name="Jasmine Kibati" ptext="she/her" />
+        <div ref={communicationRef} className={sectionClass}>
+          <h1 className="relative font-extrabold text-3xl py-8 text-center text-white">
+            {" "}
+            Communications
+          </h1>
+          <div className={profileGroupClass}>
+            <Profile
+              imgsrc={lauren}
+              name="Lauren Rankin"
+              ptext="she/her"
+              styles="h-[18.75rem] w-[9.75rem]"
+            />{" "}
+            <Profile
+              imgsrc={alana}
+              name="Alana Matsuo"
+              ptext="she/her"
+              styles="h-64 w-72"
+            />
+            <Profile
+              imgsrc={dalai}
+              name="Dalai Setiawan"
+              ptext="he/him"
+              styles="h-72 w-64"
+            />
+            <Profile
+              imgsrc={jasmine}
+              name="Jasmine Kibati"
+              ptext="she/her"
+              styles="h-[19.5rem] w-72"
+            />
+            <Profile imgsrc={siimar} name="Siimar Leen Kaur" ptext="she/her" />
+            <Profile
+              imgsrc={sarah}
+              name="Sarah O'Donnell"
+              ptext="she/her"
+              styles="h-48 w-48"
+            />
+          </div>
+        </div>
+        <div ref={financeRef} className={sectionClass}>
+          <h1 className="relative font-extrabold text-3xl py-8 text-center text-white">
+            {" "}
+            Finance
+          </h1>
+          <div className={profileGroupClass}>
+            <Profile imgsrc={graeme} name="Graeme DePiero" ptext="he/him" />{" "}
+            <Profile imgsrc={rowan} name="Rowan Chang" ptext="he/they" />
+            <Profile
+              imgsrc={jordan}
+              name="Jordan Kalist"
+              ptext=""
+              styles="h-[18.75rem] w-[16.5rem]"
+            />
+          </div>
+        </div>
+        <div ref={eventRef} className={sectionClass}>
+          <h1 className="relative font-extrabold text-3xl py-8 text-center text-white">
+            {" "}
+            Events
+          </h1>
+          <div className={profileGroupClass}>
+            <Profile imgsrc={marcus} name="Marcus Chan" ptext="he/him" />{" "}
+            <Profile imgsrc={cadey} name="Cadey Chen" ptext="she/her" />
+            <Profile imgsrc={jasmine} name="Jasmine Kibati" ptext="she/her" />
+          </div>
         </div>
       </div>
     </>

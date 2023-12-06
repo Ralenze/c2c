@@ -5,9 +5,10 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faFontAwesome } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from ".././images/logo.png";
 const NavBar = () => {
   const navbarclass =
-    "relative h-12 w-screen lg:w-[20%] cursor-pointer transition duration-200 hover:text-[#4FEFFD]";
+    "relative h-12 w-screen lg:w-[20%] cursor-pointer text-2xl transition duration-200 hover:text-[#4FEFFD]";
   const navigate = useNavigate();
   const mainPage = () => {
     navigate("/");
@@ -56,20 +57,22 @@ const NavBar = () => {
         onClick={outcomeToggle}
         className="text-white fixed z-10 left-6 top-6 h-10 w-10 lg:hidden "
       ></FontAwesomeIcon>
+
       <div
         ref={hamburgerOutcome}
         className={hamburgerOutcomeClass + "max-sm:invisible max-sm:opacity-0 "}
       >
+        <img
+          src={logo}
+          className="hidden lg:block fixed top-2 left-12 h-20 w-30 text-white"
+        />
         <FontAwesomeIcon
           icon={faXmark}
           onClick={outcomeToggle}
           className="fixed top-6 left-6 h-10 w-10 text-white lg:hidden "
         ></FontAwesomeIcon>
         <div className="lg:bg-black fixed h-1/2 lg:h-1/2 flex flex-col lg:flex-row top-1/4 lg:space-x-12 justify-around w-screen lg:w-2/3 lg:right-0 text-3xl lg:font-light text-white font-extrabold text-center lg:text-justify ">
-          <div
-            onClick={mainPage}
-            className="relative h-12 w-screen lg:w-[20%] cursor-pointer transition duration-200 hover:text-[#4FEFFD]"
-          >
+          <div onClick={mainPage} className={navbarclass}>
             {" "}
             HOME
           </div>

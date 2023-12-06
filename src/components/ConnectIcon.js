@@ -17,7 +17,7 @@ const ConnectIcon = (prop) => {
           <h1 className="text-3xl font-bold text-center text-white">
             {prop.social ? prop.social : "dummy-text"}
           </h1>
-          <h3 className="text-xl font-light text-center text-white">
+          <h3 className="text-xl font-light text-center text-white lg:px-8">
             {prop.destination ? prop.destination : "dummy-link"}
           </h3>
         </div>

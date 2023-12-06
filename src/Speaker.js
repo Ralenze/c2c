@@ -18,10 +18,10 @@ const Speaker = () => {
   return (
     <>
       <NavBar />
-      <img src={logo} className="absolute scale-50 mx-auto z-10" />
+      <img src={logo} className="lg:hidden absolute scale-50 mx-auto z-10" />
       <div className="bg-black w-screen h-fit py-12 min-h-screen">
-        <div className="top-24 relative bg-black h-fit w-fit py-12">
-          <h1 className="relative text-white text-center py-8 text-4xl font-bold">
+        <div className="top-24 relative bg-black h-fit w-fit lg:px-24 py-12">
+          <h1 className="relative text-white text-center py-8  text-4xl font-bold">
             Meet the Speakers
           </h1>
           <GreetSpeaker
