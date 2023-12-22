@@ -61,7 +61,7 @@ const App = () => {
           ref={startingref}
           className=" transition-all ease-in-out duration-1000 relative h-fit w-full top-80 opacity-0 lg:top-60"
         >
-          <h1 className=" tracking-wide leading-normal text-5xl  text-[#C1FE76] font-OS text-center top-2/5">
+          <h1 className=" tracking-wide leading-normal text-5xl  text-[#C1FE76] font-OS text-center top-2/5 bg-gradient-to-r from-[#C1FE76] to-[#F59456] text-transparent bg-clip-text">
             COMBINING
             <br /> 2
             <br />

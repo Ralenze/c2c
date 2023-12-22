@@ -30,34 +30,37 @@ const Contact = () => {
     <>
       <NavBar />
 
-      <div className="bg-black w-screen h-[275vh] lg:h-fit min-h-fit">
-        <img src={logo} className="relative scale-50 mx-auto z-10" />
-        <div className="flex flex-col relative bg-black w-screen h-screen ">
-          <div ref={contMessage} className="relative mx-auto h-24 w-4/5">
-            <h1 className="text-4xl text-center leading-relaxed font-extrabold text-white">
-              Contact
-            </h1>
-            <h3 className="text-2xl text-white text-center ">
-              {" "}
-              Feel free to contact us with any questions
-            </h3>
-          </div>
-          <div className="flex flex-col lg:flex-row w-full justify-center py-12">
-            <ConnectIcon
-              icon={faInstagram}
-              social="Instagram"
-              destination="@combining2cultures"
-            />
-            <ConnectIcon
-              icon={faEnvelope}
-              social="Email"
-              destination="combining.two.cultures@gmail.com"
-            />
-            <ConnectIcon
-              icon={faLinkedin}
-              social="Linkedin"
-              destination="Combining2Cultures"
-            />
+      <div className="bg-black w-screen h-[275vh] lg:h-fit min-h-fit ">
+        <img src={logo} className="hidden scale-50 mx-auto z-10" />
+        <div className="flex top-32 lg:top-48 flex-col relative bg-black w-screen h-screen ">
+          <div className="relative ">
+            <div ref={contMessage} className="relative mx-auto h-24 w-4/5">
+              <h1 className="text-4xl text-center leading-relaxed font-extrabold text-white">
+                Contact
+              </h1>
+              <h3 className="text-2xl text-white text-center ">
+                {" "}
+                Feel free to contact us with any questions
+              </h3>
+            </div>
+
+            <div className="flex flex-col lg:flex-row w-full justify-center py-12">
+              <ConnectIcon
+                icon={faInstagram}
+                social="Instagram"
+                destination="@combining2cultures"
+              />
+              <ConnectIcon
+                icon={faEnvelope}
+                social="Email"
+                destination="combining.two.cultures@gmail.com"
+              />
+              <ConnectIcon
+                icon={faLinkedin}
+                social="Linkedin"
+                destination="Combining2Cultures"
+              />
+            </div>
           </div>
           <h1 className="text-center text-white text-4xl font-extrabold">
             Our Sponsors

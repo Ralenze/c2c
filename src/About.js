@@ -80,9 +80,9 @@ const About = () => {
     <>
       <NavBar />
       <div className="bg-black h-screen lg:h-[70vh] w-screen flex flex-col justify-evenly">
-        <h1 className="relative font-extrabold text-4xl top-12 text-white text-center">
+        <h1 className="relative font-extrabold text-4xl top-12 text-center bg-gradient-to-r from-[#FF64C4] to-[#4FEFFD]  text-transparent bg-clip-text">
           Meet Our Team.
-          <p className=" text-white text-sm font-normal py-6 px-6 leading-loose text-center">
+          <p className=" text-white text-sm font-normal py-6 px-8 lg:px-72 leading-loose text-center">
             Meet the C2C 2024 committee! They have been working hard to make
             this whole conference possible. All team members are University of
             Waterloo students who span various programs, faculties and years of
