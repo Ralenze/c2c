@@ -9,16 +9,14 @@ const GreetSpeaker = (props) => {
         <div className="flex justify-center">
           <Profile
             imgsrc={props.imgsrc}
-            styles={
-              (duo ? "h-60 w-[11.25rem] px-4 " : null) + " " + props.style
-            }
+            styles={"h-80 w-60 px-4 " + " " + props.style}
             name={props.name}
             ptext={props.title}
           ></Profile>
           {duo ? (
             <Profile
               imgsrc={props.imgsrc2}
-              styles={"h-60 w-[11.25rem] px-4 " + props.style2}
+              styles={"h-80 w-60 px-4 " + props.style2}
               name={props.name2}
               ptext={props.title2}
             ></Profile>

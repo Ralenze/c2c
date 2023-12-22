@@ -66,7 +66,7 @@ const Contact = () => {
             <img src={wesefsponsor} className="h-40 w-40  max-sm:m-auto "></img>
             <img
               src={canadasponsor}
-              className="self-center h-2/5 w-4/5 lg:h-[3.75rem] lg:w-[13.75rem] "
+              className="self-center h-[4.5rem] w-[16.5rem] lg:h-[3.75rem] lg:w-[13.75rem] "
             ></img>
             <img src={wusasponsor} className="h-40 w-40 self-center"></img>
             <img

@@ -24,7 +24,7 @@ export default function Foldable(props) {
         }
         onClick={toggleOpen}
       >
-        <h1 className="text-white text-center border-b-white border-b font-bold text-lg">
+        <h1 className="text-white hover:cursor-pointer text-center border-b-white border-b font-bold text-lg">
           {props.title}
         </h1>
         <p

@@ -20,7 +20,7 @@ const Speaker = () => {
       <NavBar />
       <img src={logo} className="lg:hidden absolute scale-50 mx-auto z-10" />
       <div className="bg-black w-screen h-fit py-12 min-h-screen">
-        <div className="top-24 relative bg-black h-fit w-fit lg:px-24 py-12">
+        <div className="top-24 relative bg-black h-fit w-fit lg:px-48 py-12">
           <h1 className="relative text-white text-center py-8  text-4xl font-bold">
             Meet the Speakers
           </h1>
@@ -34,10 +34,10 @@ const Speaker = () => {
           <GreetSpeaker
             name="Craig Fortier"
             imgsrc={craig}
-            style="h-80 w-72"
+            style="object-scale-down"
             duo={true}
             name2="Matt Borland"
-            style2="h-64 w-48"
+            style2="object-scale-down"
             imgsrc2={matt}
             text="
           Craig is an associate professor in the department of Social Development Studies at the University of Waterloo. Their research interests include settler colonialism, popular culture and radical change, trans-disciplinary social justice pedagogy, Indigenous and settler relationships, and much more. Matt is a lecturer in the Department of Systems Design Engineering at UW. His research interests include music technology, design methods and systems thinking. Together, they will be giving a public lecture.
@@ -57,7 +57,7 @@ const Speaker = () => {
           <GreetSpeaker
             name="Léa Rousseau"
             imgsrc={lea}
-            style="h-60 w-60"
+            style="object-scale-down"
             text="Léa graduated from the University of Waterloo with a Bachelor of Knowledge Integration in 2023 and is now working as a Workshop Facilitator and Food Canada Sales Associate at Dempsey Corporation. She is running the Team Collaboration working group at C2C 2024, based on her fourth year KI thesis project. Léa is passionate about collaboration and loves to rock climb.
 "
           />
@@ -73,20 +73,20 @@ const Speaker = () => {
           <GreetSpeaker
             name="Susie Brown"
             imgsrc={susie}
-            style="h-60 w-60"
+            style="object-contain"
             text="Let’s Talk Science is committed to preparing youth in Canada for future careers and citizenship demands in a rapidly changing world. In a world increasingly driven by innovation, the demand for people who can fill science, technology, engineering and mathematics (STEM) - related jobs - will only continue to increase but the reality is that most students in Canada disengage from STEM courses before graduating high school. Let's Talk Science will be running the Science Communication working groups at C2C!
 "
           />
           <GreetSpeaker
             name="John Wager"
             imgsrc={john}
-            styles="h-72 w-48"
+            styles="object-scale-down"
             text="John will run a workshop at the conference that teaches the art of wood carving, with the final product being a wooden spoon. This session will cover respectful sourcing and selecting wood, splitting wood and axe work, slojd and hook knives technique and basic sharpening tools and techniques. 
 
 
 "
           />
-          <GreetSpeaker duo={true} />
+
           <h1 className="text-center text-white text-4xl font-bold tracking-wide">
             Knowledge Integration Panel
           </h1>

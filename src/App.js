@@ -56,12 +56,12 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <div className="bg-black h-screen w-screen">
+      <div className="bg-black h-screen w-screen ">
         <div
           ref={startingref}
           className=" transition-all ease-in-out duration-1000 relative h-fit w-full top-80 opacity-0 lg:top-60"
         >
-          <h1 className=" tracking-wide leading-normal text-5xl  text-[#C1FE76] font-SF text-center top-2/5">
+          <h1 className=" tracking-wide leading-normal text-5xl  text-[#C1FE76] font-OS text-center top-2/5">
             COMBINING
             <br /> 2
             <br />
@@ -72,7 +72,7 @@ const App = () => {
           ref={ref1}
           className="relative top-44 transition duration-500 ease-in-out opacity-0"
         >
-          <h1 className="tracking-wider text-center text-3xl font-SF font-bold text-white">
+          <h1 className="tracking-wider text-center text-3xl font-OS font-bold text-white">
             Jan 12-14 2024
           </h1>
           <img
@@ -120,8 +120,8 @@ const App = () => {
         <h1 className="text-3xl px-4 font-bold text-white">
           REGISTRATIONS NOW OPEN!!
         </h1>
-        <div className="h-16 align-middle flex items-center text-center justify-center rounded-md w-4/5 mx-auto bg-green-400 lg:w-3/5">
-          REGISTER NOW
+        <div className="h-32 align-middle flex items-center text-center justify-center rounded-md w-4/5 font-extrabold text-2xl mx-auto bg-gray-200 hover:bg-blue-400 hover:scale-105 hover:cursor-pointer transition duration-200 lg:w-2/5">
+          Click here to Register
         </div>
       </div>
     </>
